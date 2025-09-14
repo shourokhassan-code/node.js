@@ -10,16 +10,8 @@ app.use(express.text());
 // GET /
 app.get("/", (req, res) => {
   fs.readFile(FILE, "utf8", (err, data) => {
-    if (err) return res.status(404).send("File not found");
-
-    const lines = data.split("\n");
-    let html = `<h1>${lines[0]}</h1>`;
-    for (let i = 1; i < lines.length; i++) {
-      html += `<p>${lines[i]}</p>`;
-    }
-
-    res.setHeader("Content-Type", "text/html");
-    res.send(html);
+    if (err) return res.status(404).send("File not found or empty");
+    res.send(data || "Empty file");
   });
 });
 

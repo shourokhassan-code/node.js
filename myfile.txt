@@ -1,4 +1,2 @@
-welcome to our course 
-Our course talks about MEAN stack 
-and it is easy and simple. 
-MEAN STACK contains of MongoDB, Express, AngularJS, and Node.
+hello world
+
